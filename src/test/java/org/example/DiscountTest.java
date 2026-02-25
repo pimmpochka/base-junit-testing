@@ -29,7 +29,7 @@ public class DiscountTest {
 
     @Test
     @DisplayName("calculateDiscountedPrice не принимает discount = -1 ")
-    void testDiscount_minusOne_throwsException() {
+    void testDiscount_minusOne_throwsIllegalArgumentException() {
         Assertions.assertThrows(IllegalArgumentException.class,
                 () -> calculateDiscountedPrice(980, -1)
         );
@@ -77,7 +77,7 @@ public class DiscountTest {
 
     @Test
     @DisplayName("calculateDiscountedPrice не принимает discount = 101 ")
-    void testDiscount_oneHundredOne_throwsException() {
+    void testDiscount_oneHundredOne_throwsIllegalArgumentException() {
         Assertions.assertThrows(IllegalArgumentException.class,
                 () -> calculateDiscountedPrice(1000, 101)
         );
@@ -85,7 +85,7 @@ public class DiscountTest {
 
     @Test
     @DisplayName("calculateDiscountedPrice не принимает отрицательный price ")
-    void testPrice_negative_throwsException() {
+    void testPrice_negative_throwsIllegalArgumentException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> calculateDiscountedPrice(-100, 50)
         );
     }
